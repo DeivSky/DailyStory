@@ -1,4 +1,4 @@
-﻿namespace DailyStory;
+﻿namespace DailyStory.Maui;
 
 public partial class App : Application
 {

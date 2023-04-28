@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DailyStory.Maui"
+             xmlns:views="clr-namespace:DailyStory.Maui.Views"
+			 xmlns:internal="clr-namespace:DailyStory.Maui.Internal;assembly=DailyStory.Maui.Internal"
+			 x:Class="DailyStory.Maui.MainPage"
+             Padding="10">
+
+	<StackLayout x:Name="StackLayout" Orientation="Vertical">
+
+		<views:Header />
+
+		<Grid ColumnSpacing="10"
+			  RowSpacing="10"
+			  ColumnDefinitions="3*, 1*"
+			  RowDefinitions="100" >
+
+			<Editor x:Name="Editor"
+					Grid.Column="0"
+					Placeholder="Today..."
+					VerticalOptions="StartAndExpand" 
+					AutoSize="TextChanges" />
+
+			<Button Text="Save log" 
+					Grid.Column="1"
+					VerticalOptions="Start"
+					Clicked="OnSaveLogClicked"/>
+
+		</Grid>
+
+		<Label x:Name="ModTag" HorizontalTextAlignment="Start" FontSize="Caption" FontAttributes="Italic" TextColor="LightGray" />
+
+		<Label Text="Log" HorizontalTextAlignment="Center" />
+
+		<ListView x:Name="List"
+				  x:DataType="internal:Story"
+				  CachingStrategy="RecycleElement">
+
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<TextCell Text="{Binding Text}" Detail="{Binding Date}" />
+				</DataTemplate>
+			</ListView.ItemTemplate>
+
+		</ListView>
+
+	</StackLayout>
+
+</ContentPage>

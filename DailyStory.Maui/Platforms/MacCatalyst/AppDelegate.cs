@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace DailyStory;
+namespace DailyStory.Maui;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

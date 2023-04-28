@@ -1,4 +1,6 @@
-﻿namespace DailyStory;
+﻿using DailyStory.Maui;
+
+namespace DailyStory;
 
 public static class MauiProgram
 {
